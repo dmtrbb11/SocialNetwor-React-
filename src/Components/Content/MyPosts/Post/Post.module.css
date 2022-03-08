@@ -1,0 +1,13 @@
+.post{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.dot{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #222222;
+  margin-right: 30px;
+}
