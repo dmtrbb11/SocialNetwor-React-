@@ -2,6 +2,14 @@ import classes from "./MyPosts.module.css";
 import Post from "./Post/Post.jsx";
 
 const MyPosts = () => {
+  let arrPosts = [
+    { id: 1, post: "Today was a great day" },
+    { id: 2, post: "Hi" },
+    { id: 3, post: "How are u doing" },
+    { id: 4, post: "Make my home work" },
+    { id: 5, post: "Today was a great day" },
+  ];
+
   return (
     <div className={classes.posts}>
       <div className={classes.add_post_info}>
@@ -18,13 +26,11 @@ const MyPosts = () => {
       </div>
 
       <div className={classes.posts}>
-        <Post message="Hello gamburger" />
-        <Post message="I love chickenburger" />
-        <Post message="I love chickenburger" />
-        <Post message="I love chickenburger" />
-        <Post message="I love chickenburger" />
-        <Post message="I love chickenburger" />
-        <Post message="I love chickenburger" />
+        <Post message={arrPosts[0].post} />
+        <Post message={arrPosts[1].post} />
+        <Post message={arrPosts[2].post} />
+        <Post message={arrPosts[3].post} />
+        <Post message={arrPosts[4].post} />
       </div>
     </div>
   );
