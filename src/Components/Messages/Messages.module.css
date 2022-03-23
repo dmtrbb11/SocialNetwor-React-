@@ -16,22 +16,9 @@
   margin-bottom: 25px;
 }
 
-.dialog_item a {
-  color: black;
-}
 .messages_list {
   padding-left: 40px;
   padding-top: 20px;
 }
 
-.message_header{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px;
-  padding: 8px;
-  border: 1px solid #9c9c9c;
-  border-radius: 30px;
-  background-color: #eeeaea;
-}
+

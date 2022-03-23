@@ -1,14 +1,20 @@
+import react from "react";
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post.jsx";
 
-const MyPosts = () => {
-  let arrPosts = [
-    { id: 1, post: "Today was a great day" },
-    { id: 2, post: "Hi" },
-    { id: 3, post: "How are u doing" },
-    { id: 4, post: "Make my home work" },
-    { id: 5, post: "Today was a great day" },
-  ];
+const MyPosts = (props) => {
+
+
+  let posts = props.posts.map((e, pos) => (
+    <Post key={pos} message={e.post} />
+  ));
+
+
+  let postTextArea = react.createRef();
+  let addPostBtn = () =>{
+    let text = postTextArea.current.value;
+    props.addPost(text);
+  }
 
   return (
     <div className={classes.posts}>
@@ -20,18 +26,15 @@ const MyPosts = () => {
           height="100px"
           className={classes.textarea_post}
           placeholder="Your post"
+          ref={postTextArea}
         ></textarea>
 
-        <button className={classes.postAdd_btn}>Add</button>
+        <button className={classes.postAdd_btn} onClick={addPostBtn}>
+          Add
+        </button>
       </div>
 
-      <div className={classes.posts}>
-        <Post message={arrPosts[0].post} />
-        <Post message={arrPosts[1].post} />
-        <Post message={arrPosts[2].post} />
-        <Post message={arrPosts[3].post} />
-        <Post message={arrPosts[4].post} />
-      </div>
+      <div className={classes.posts}>{posts}</div>
     </div>
   );
 };
