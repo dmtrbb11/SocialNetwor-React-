@@ -6,7 +6,11 @@ const Content = (props) => {
   return (
     <div>
       <AccInfo />
-      <MyPosts posts={props.posts.postsPage} addPost={props.addPost} />
+      <MyPosts
+        posts={props.posts}
+        addPost={props.addPost}
+        updateTextArea={props.updateTextArea}
+      />
     </div>
   );
 };

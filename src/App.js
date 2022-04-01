@@ -22,14 +22,18 @@ const App = (props) => {
           <Routes>
             <Route
               path="/messages/*"
+              element={<Messages users={props.state} messages={props.state} />}
+            />
+            <Route
+              path="/content"
               element={
-                <Messages
-                  users={props.state}
-                  messages={props.state}
+                <Content
+                  posts={props.state}
+                  addPost={props.addPost}
+                  updateTextArea={props.updateTextArea}
                 />
               }
             />
-            <Route path="/content" element={<Content posts={props.state} addPost = {props.addPost}/>} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />
